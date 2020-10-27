@@ -4,6 +4,7 @@
 # Some things to note. When we have a positive number that gets split up and 85% goes into checking and 15% goes into savings. 
 # All negative numbers gets taken out of the checking account.
 
+<<<<<<< HEAD
 def saturdays_bank_transactions(transations) -> (float, float):
     savings = 1096.25
     checking = 1590.80
@@ -19,6 +20,27 @@ def saturdays_bank_transactions(transations) -> (float, float):
             checking += item
         transaction_counter += 1
         
+=======
+
+from typing import Tuple
+savings = 1096.25
+checking = 1590.80
+
+def process_transaction(transaction):
+    global checking
+    global savings
+    if transaction > 0:
+        checking += (transaction * 0.85)
+        savings += (transaction * 0.15)
+    elif transaction < 0:
+        checking += transaction
+    else:
+        print("There was no change made to your account for a transaction.")
+
+def saturdays_bank_transactions(transactions) -> Tuple[float, float]:
+    for charge in transactions:
+        process_transaction(charge)
+>>>>>>> upstream/master
 
     return checking, savings
 
