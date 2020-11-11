@@ -1,4 +1,8 @@
 def sum_2d_array(two_d_array):
+    new_array = []
+    for array in two_d_array:
+        new_array.append(sum(array))
+    return new_array
     """
     - Add code in the defined function to sum up the internal arrays. Returning an array of the sums.
     
@@ -8,7 +12,6 @@ def sum_2d_array(two_d_array):
     
     - If a sub array is empty the sum is 0
     """
-    pass
 
 if __name__ == "__main__":
     two_d_array = [
