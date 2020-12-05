@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    app.logger.info("User traveled to the info route.")
+    app.logger.warning("This is the default route when opening up the website")
     return 'Hello, World!'
 
 
@@ -16,5 +16,11 @@ def hello_world():
 @app.route('/hello/')
 @app.route('/hello/<name>')
 def hello(name = None):
-    app.logger.warning("This page isn't finished yet but we say hello.")
+    app.logger.warning("This is the incomplete route for repeating a name")
     return render_template('hello.html', name=name)
+
+@app.route('/goodbye/')
+@app.route('/goodbye/<name>')
+def goodbye(name = None):
+    app.logger.warning("This is the incomplete route for saying goodbye to a name")
+    return render_template('goodbye.html', name=name)
